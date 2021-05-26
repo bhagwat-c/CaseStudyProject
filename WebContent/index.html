@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online consultation booking </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" media="screen and (max-width:1170px)" href="phone.css">
+    <script src="pdash.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="images/logo.svg" alt="logo ">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#services-container">Services</a></li>
+            <li class="item"><a href="#contact">Contact us</a></li>
+            <li class="item"><a href="mainLogin.html">Login</a></li>
+
+        </ul>
+        
+    </nav>
+    <section id="home">
+        <h1 class="h-primary center">
+            <a href="" class="typewrite" style="color: black; text-decoration: none;" data-period="1500" data-type='[ "Book your consultation now" ]'>
+              <span class="wrap"></span>
+            </a>
+          </h1>
+        <p>
+            Chat with a doctor privately. Talk to doctors online about your issues & 
+            get answers. Get online
+            consultation from verified doctors online.
+            Talk to doctor on chat/call.
+        </p>
+        <a href="Consultatio.html"><button class="btn">Book now</button></a>
+    </section>
+    <section id="services-container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <a href="Consultatio.html"><img src="images/book.png" alt=""></a>
+                <h2 class="h-secondary center">Book consultation</h2>
+                <p>Select preferred doctor and time slot to book an
+                    in-click or video consultation</p>
+            </div>
+            <div class="box">
+                <img src="images/lab.jpg" alt="">
+                <h2 class="h-secondary center">Pathalogy</h2>
+                <p>Pathology is the science of disease in all its manifestations,
+                    whether structural or functional, progressive or regressive.</p>
+            </div>
+            <div class="box">
+                <img src="images/delv.jpg" alt="">
+                <h2 class="h-secondary center">Order medicines</h2>
+                <p>Superfast delivery of medicines in all corners of India.
+                    Same day delivery available. 22k+ pin codes serviced.</p>
+
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1 class="h-primary center">Contact us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email:</label>
+                    <input type="text" name="Email" id="Email" placeholder="Enter your Email">
+                </div>
+                <div class="form-group">
+                    <label for="Phone No">Phone No:</label>
+                    <input type="text" name="Phone No" id="Phone No" placeholder="Enter your Phone No">
+                </div>
+                <div class="form-group">
+                    <label for="Message">Message:</label>
+                    <textarea name="Message" id="" cols="30" rows="10"></textarea>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy;www.OnlineBookConsultation.com All rights reserve
+        </div>
+    </footer>
+
+    <script src="typed.js"></script>
+    <script>
+        var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+    </script>
+</body>
+
+</html>

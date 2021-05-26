@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login-Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="drlogin.css" type="text/css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+
+            <div class="login-icons">
+                <img src="images/drlogo.jpg">
+
+                <h3>Doctor login</h3>
+            </div>
+            <form id="login" onsubmit="return validation()" class="input-group" action="./LoginValidationDoctor" method="get">
+                <input type="text" name="user" class="input-field" placeholder="User-Id" id="user" autocomplete="off">
+                <span id="username" class="text-danger font-weight-bold"> </span>
+
+                <input type="password" class="input-field" name="pass" placeholder="Enter Password" id="pass"
+                    autocomplete="off">
+                <span id="password" class="text-danger font-weight-bold"> </span>
+
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Log-In</button>
+            </form>
+
+
+        </div>
+
+    </div>
+
+    </div>
+    </div>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("registeer");
+        var z = document.getElementById("btn");
+
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+
+        function validation() {
+            var pass = document.getElementById('pass').value;
+            var user = document.getElementById('user').value;
+
+            if (user == "") {
+                alert("Please fill the Username field");
+                return false;
+            }
+            if ((user.length <= 2) || (user.length > 20)) {
+                alert("Username lenght must be between 2 and 20");
+                return false;
+            }
+            if (!isNaN(user)) {
+                alert("only characters are allowed");
+                return false;
+            }
+            if (pass == "") {
+                alert("Please fill the password field");
+                return false;
+            }
+            if ((pass.length <= 5) || (pass.length > 20)) {
+                alert("Passwords lenght must be between  5 and 20");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
