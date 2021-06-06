@@ -2,78 +2,68 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="BookApp.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="BookApp.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <div class="container">
-    <div class="title">Appointment</div>
-    <div class="content">
-      <form action="./PatientAppointment1" method="get">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" name = "appname"required>
-          </div>
-          <div class="input-box">
-            <span class="details">Age</span>
-            <input type="text" placeholder="Enter your age" required>
-          </div>
-          <div class="input-box">
-            <label for="Doctor">Doctor</label>
-            <select name="Doctor" id="Doctor"
-              style="padding-right: 200px;padding-bottom: 14px;padding-top: 12px;border-radius: 5px;font-size:medium;">
-              <option value="Suhas B">Suhas B</option>
-              <option value="Bhagwat C">Bhagwat C</option>
-              <option value="Amitha G">Amitha G</option>
-              <option value="Shiva A">Shiva A</option>
-            </select>
-          </div>
-          <div class="input-box">
-            <span class="details">Schedule</span>
-            <label for="dt"></label><input name="dta" type="datetime-local"/>
-          </div>
-          <div class="input-box">
-            <span class="details">Health History</span>
-            <input type="text" placeholder="Confirm your Health History" name="ahh" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Consultation History</span>
-            <input type="text" placeholder="Confirm your Consultation History" name="ach" required>
-          </div>
-        </div>
-        <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">Male</span>
-            </label>
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">Female</span>
-            </label>
-            <label for="dot-3">
-              <span class="dot three"></span>
-              <span class="gender">Others</span>
-            </label>
-          </div>
-        </div>
-        <div class="input-box">
-          <span class="details">Health Concerns Description</span>
-          <textarea rows="5" cols="50" wrap="physical"></textarea>
-        </div>
-        <div class="button">
-          <input type="submit" value="Book Appointment">
-        </div>
-      </form>
-    </div>
-  </div>
+	<div class="container">
+		<div class="title">Appointment</div>
+		<div class="content">
+			<form action="./BookAppointment" method="get">
+				<div class="user-details">
+					<div class="input-box">
+						<span class="details">Patient Id</span> <input type="text"
+							placeholder="Enter your patient Id" name="pid" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Age</span> <input type="text"
+							placeholder="Enter your age" required>
+					</div>
+					<div class="input-box">
+						<label for="Doctor">Doctor</label> <select name="Doctor"id="Doctor" placeholder="Select doctor"
+							style="padding-right: 200px; padding-bottom: 14px; padding-top: 12px; border-radius: 5px; font-size: medium;">
+							<option value="1">Dr.Reddy</option>
+					</div> <br>
+					<div class="input-box">
+						<span class="details">Schedule</span> <label for="dt"></label><input
+							name="dta" type="datetime-local" />
+					</div>
+					<div class="input-box">
+						<span class="details">Health History</span> <input type="text"
+							placeholder="Confirm your Health History" name="ahh" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Consultation History</span> <input
+							type="text" placeholder="Confirm your Consultation History"
+							name="ach" required>
+					</div>
+				</div>
+				<div class="gender-details">
+					<input type="radio" name="gender" id="dot-1"> <input
+						type="radio" name="gender" id="dot-2"> <input type="radio"
+						name="gender" id="dot-3"> <span class="gender-title">Gender</span>
+					<div class="category">
+						<label for="dot-1"> <span class="dot one"></span> <span
+							class="gender">Male</span>
+						</label> <label for="dot-2"> <span class="dot two"></span> <span
+							class="gender">Female</span>
+						</label> <label for="dot-3"> <span class="dot three"></span> <span
+							class="gender">Others</span>
+						</label>
+					</div>
+				</div>
+				<div class="input-box">
+					<span class="details">Health Concerns Description</span>
+					<textarea rows="5" cols="50" wrap="physical"></textarea>
+				</div>
+				<div class="button">
+					<input type="submit" value="Book Appointment">
+				</div>
+			</form>
+		</div>
+	</div>
 
 </body>
 

@@ -1,0 +1,127 @@
+h3 {
+    position: relative;
+    margin-left: 45%;
+    margin-top: 0%;
+    font-size: 20px;
+}
+
+h2 {
+    position: absolute;
+    font-size: 20px;
+    margin-left: 30%;
+    top: 10%;
+}
+
+body {
+    background-image: url('images/pinfo.jpg');
+    /*background-image: url('/images/pinfo1.jpg');*/
+    background-position: center;
+    background-size: cover;
+}
+
+table {
+    position: relative;
+    margin-left: 30%;
+    margin-top: 0%;
+    width: 40%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64, 64, 64, .7);
+    border-radius: 12px 12px 12px 12px;
+    overflow: hidden;
+}
+
+td,
+th {
+    padding: 15px 20px;
+    text-align: 50%;
+    margin-left: 45%;
+}
+
+th {
+    background-color: #ba68c8;
+    color: #fafafa;
+    font-family: 'Open Sans', Sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+tr {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form .submit-btn {
+    left: 15%;
+    margin-left: 30%;
+    position: relative;
+    display: inline-block;
+    padding: 12px 36px;
+    margin: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    border-color: black;
+    background: linear-gradient(90deg, #0162c8, #55e7fc);
+}
+
+.content form .user-details {
+    margin-left: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+    margin-left: 30%;
+    margin-bottom: 8px;
+    width: calc(100% / 2 - 20px);
+    background: transparent;
+}
+
+form .input-box span.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    background: transparent;
+}
+
+.user-details .input-box input {
+    height: 40px;
+    width: 50%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: #9b59b6;
+}
+
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .category {
+    display: flex;
+    width: 80%;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+form .category label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

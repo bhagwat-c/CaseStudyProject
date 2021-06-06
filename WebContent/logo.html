@@ -1,51 +1,61 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html class="no-js">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login-Page</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="logo.css" type="text/css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Login-Page</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="logo.css" type="text/css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
-    <div class="hero">
-        <div class="form-box">
-            <div class="button-box">
-                <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">Log-in</button>
-                <button type="button" class="toggle-btn" onclick="register()">Register</button>
-            </div>
-            <div class="login-icons">
-                <img src="images/login.jpg">
+	<div class="hero">
+		<div class="form-box">
+			<div class="button-box">
+				<div id="btn"></div>
+				<button type="button" class="toggle-btn" onclick="login()">Log-in</button>
+				<button type="button" class="toggle-btn" onclick="register()">Register</button>
+			</div>
+			<div class="login-icons">
+				<img src="images/login.jpg">
 
-            </div>
-            <form id="login" onsubmit="return validation()" class="input-group" action="./LoginValidationPatient" method="post">
-                <input type="text" name="user" class="input-field" placeholder="User-Id" id="user" autocomplete="off">
-                <input type="password" class="input-field" name="pass" placeholder="Enter Password" id="pass"
-                    autocomplete="off">
+			</div>
+			<form id="login" onsubmit="return validation()" class="input-group"
+				action="./LoginValidationPatient" method="post">
+				<input type="text" name="user" class="input-field"
+					placeholder="User-Id" id="user" autocomplete="off"> <input
+					type="password" class="input-field" name="pass"
+					placeholder="Enter Password" id="pass" autocomplete="off">
 
-                <input type="checkbox" class="check-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn">Log-In</button>
-            </form>
-            <form id="registeer" onsubmit="return validate()" class="input-group" action="./InsertPatient" method="get">
-                <input type="text" class="input-field" placeholder="User-Name" id="t1" name="t1">
-                <input type="password" class="input-field" placeholder="Enter password" id="t2" name="t2">
-                <input type="password" class="input-field" placeholder="Confirm Password" id="t3" name="t3">
-                <input type="text" class="input-field" placeholder="Name" id="t4" name="t4">
-                <input type="number" class="input-field" placeholder="contact no" id="t5" name="t5">
-                <input type="text" class="input-field" placeholder="Location" id="t6" name="t6">
+				<input type="checkbox" class="check-box"><span>Remember
+					Password</span>
+				<button type="submit" class="submit-btn">Log-In</button>
+			</form>
+			<form id="registeer" onsubmit="return validate()" class="input-group"
+				action="./InsertPatient" method="get">
+				<input type="text" class="input-field" placeholder="User-Name"
+					id="t1" name="t1"> <input type="password"
+					class="input-field" placeholder="Enter password" id="t2" name="t2">
+				<input type="password" class="input-field"
+					placeholder="Confirm Password" id="t3" name="t3"> <input
+					type="text" class="input-field" placeholder="Name" id="t4"
+					name="t4"> <input type="number" class="input-field"
+					placeholder="contact no" id="t5" name="t5"> <input
+					type="text" class="input-field" placeholder="Location" id="t6"
+					name="t6">
 
-                <button type="submit" class="submit-btn">register</button>
-            </form>
+				<button type="submit" class="submit-btn">register</button>
+			</form>
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 
-    <script>
+	<script>
         var x = document.getElementById("login");
         var y = document.getElementById("registeer");
         var z = document.getElementById("btn");

@@ -44,7 +44,7 @@ public class InsertPatient extends HttpServlet {
 		
 		
 		HttpSession session = request.getSession(true);
-		session.setAttribute("userName",p.getName());
+		session.setAttribute("userName",usrName);
 		
 		boolean checkuser = dao.validateRegUserExists(usrName);
 		if(checkuser==true) {
@@ -59,6 +59,8 @@ public class InsertPatient extends HttpServlet {
 		int row= dao.insertPatient(p);
 	
 		if(row==1) {
+			
+			session.setAttribute("userName",usrName);
 						session.setAttribute("userId", dao.getPatientId(p)+" ");
 			
 			RequestDispatcher rd = request.getRequestDispatcher("./success.jsp");

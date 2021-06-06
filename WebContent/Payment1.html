@@ -1,0 +1,241 @@
+<html>
+    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.pic{
+  /* The image used */
+  background-image: url("images/hospital.jpg");
+
+  /* Full height */
+  height: 100%; 
+  width:100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+        <title>Payment</title>
+       <link href="Payment.css" rel="stylesheet">
+        <script>
+            window.onload=function close(){
+                document.getElementById("creditcard").style.display="none"; 
+                document.getElementById("debitcard").style.display="none";
+                document.getElementById("upi").style.display="none"
+            }
+            function CREDITCARD() { 
+                document.getElementById("creditcard").style.display="block"; 
+                document.getElementById("debitcard").style.display="none";
+                document.getElementById("upi").style.display="none"; 
+            }
+            function DEBITCARD(){
+                document.getElementById("creditcard").style.display="none"; 
+                document.getElementById("debitcard").style.display="block";
+                document.getElementById("upi").style.display="none"
+            }
+            function UPI(){
+                document.getElementById("creditcard").style.display="none"; 
+                document.getElementById("debitcard").style.display="none"; 
+                document.getElementById("upi").style.display="block"; 
+            }
+            </script>
+    </head>
+    <body >
+    <div class="pic">
+        <div class="row">
+  <h2>Payment Form</h2>
+  
+  <form method="POST">
+  <h4>Account</h4>
+<div class="input-group"></div>
+ <div class="input-group1">
+    <input type="text" placeholder="Enter the Paitent id" required class="name">
+    <i class="fa fa-user icon"></i>
+
+     <input type="text" placeholder="Paitent Name" required class="name">
+     <i class="fa fa-user icon"></i>
+  
+  </div>
+  </form>
+        <table>
+                <tr>
+                <td>
+                    <label><b>Choose payment method</b></label>
+                </td>
+                <td>
+                    
+                 <button onclick="CREDITCARD()" class="ccbtn">CREDIT CARD</button>
+
+                 </td>
+                 <td>
+                 <button onclick="DEBITCARD()"class="dcbtn">DEBIT CARD</button>
+        
+                </td>
+                <td>
+                    <button onclick="UPI()"class="upibtn">UPI</button>
+                </td>
+            </tr>
+        </table>
+        
+        <form action="payment1.html" method="post">
+            
+           
+
+                    <div id="debitcard">
+                        <table>
+                        <tr>
+                            <td>
+                                <label for="fee"><b>Enter Debit Card Details</b></label>
+                            
+                            </td>
+                            </tr>
+                            
+                        <tr>
+                            
+                            <td>
+                                
+
+                                <label for="cname">Name on Card</label>
+                            </td>
+                            <td>
+                                
+                                <input type="text" id="dcname" name="dcardname" placeholder="Card Holder Name" class="dob">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="dcnum">Debit card number</label>
+                            </td>
+                            <td>
+                                <input type="text" id="dcnum" name="dcardnumber" placeholder="Card Number " class="dob">
+                            </td>
+                            
+            
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="expmonth">Exp Month</label>
+            
+                            </td>
+                            <td>
+                                <input type="text" id="expmonth" name="expmonth" placeholder="Month" class="dob">
+                            </td>
+                            <td>
+                                <label for="expyear">Exp Year</label>
+              
+                            </td>
+                            <td>
+                                <input type="text" id="expyear" name="expyear" placeholder="Year" class="dob">
+                            </td>
+                            <td>
+                                <label for="cvv">CVV</label>
+                
+                            </td>
+                            <td>
+                                <input type="text" id="cvv" name="cvv" placeholder="CVV" class="dob">
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div id="creditcard">
+                       <table>
+                        <tr>
+                        <td>
+                            <label for="fee"><b>Enter Credit Card Details</b></label>
+                        </td>
+                       </tr>
+                        <tr>
+                            
+                            
+                            <td>
+                                
+
+                                <label for="cname">Name on Card</label>
+                            </td>
+                            <td>
+                                
+                                <input type="text" id="ccname" name="cardname" placeholder="Card Holder Name" class="dob">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="ccnum">Credit card number</label>
+                            </td>
+                            <td>
+                                <input type="text" id="ccnum" name="ccardnumber" placeholder="Card Number" class="dob">
+                            </td>
+                            
+            
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="expmonth">Exp Month</label>
+            
+                            </td>
+                            <td>
+                                <input type="text" id="expmonth" name="expmonth" placeholder="Month" class="dob">
+                            </td>
+                            <td>
+                                <label for="expyear">Exp Year</label>
+              
+                            </td>
+                            <td>
+                                <input type="text" id="expyear" name="expyear" placeholder="Year" class="dob">
+                            </td>
+                            <td>
+                                <label for="cvv">CVV</label>
+                
+                            </td>
+                            <td>
+                                <input type="text" id="cvv" name="cvv" placeholder="CVV" class="dob">
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div id="upi">
+                        <table>
+
+                      
+                        <tr>
+                            
+                            <td>
+                                <label for="fee"><b>Enter Upi Details</b></label>
+                            </td>
+                           
+                        </tr>
+                        <tr>
+                            
+                            <td>
+                                
+
+                                <label for="cname">Name in UPI</label>
+                            </td>
+                            <td>
+                                
+                                <input type="text" id="cname" name="cardname" placeholder="UPI Id" class="dob">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="ccnum">UPI number</label>
+                            </td>
+                            <td>
+                                <input type="text" id="upinum" name="upinumber" placeholder="UPI number" class="dob">
+                            </td>
+                            
+            
+                        </tr>
+                    </table>
+                    </div>
+          
+            </form>
+           <button type="button" onclick="location.href='completion.html'" class="hbtn" >Submit</button>
+           </div>
+           </div>
+    </body>
+</html>

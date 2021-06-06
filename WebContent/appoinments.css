@@ -1,0 +1,86 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+body{
+  background-image: url('images/hospital.jpg');
+  margin-left: auto;
+  margin-right: auto;
+}
+h1{
+  position: absolute;
+  left: 40%;
+  top: 10%;
+}
+table{
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%,-50%);
+  width: 50%; 
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 2px 15px rgba(64,64,64,.7);
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+ }
+ td , th{
+  padding: 15px 20px;
+  text-align: center;
+ }
+ th{
+  background-color: #ba68c8;
+  color: #fafafa;
+  font-family: 'Open Sans',Sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+ }
+ tr{
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+ }
+ form{
+  position: absolute;
+  left: 80%;
+  top: 30%;
+ }
+ .form_field{
+  font-family: Poppins;
+  width: 80%;
+  border: 0;
+  border-bottom: 2px solid #0f0f0f;
+  outline: 0ch;
+  font-size: 1.3rem;
+  color: rgb(7, 7, 7);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+ }
+ a{
+  position: relative;
+  display: inline-block;
+  padding: 12px 36px;
+  margin: 10px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  background: linear-gradient(90deg,#0162c8,#55e7fc);
+}
+.submit-btn{
+  position: relative;
+  display: inline-block;
+  padding: 12px 36px;
+  margin: 10px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  border-color: black;
+  background: linear-gradient(90deg,#0162c8,#55e7fc);   
+}

@@ -37,16 +37,15 @@ public class LoginValidationPatient extends HttpServlet {
 	      if(check==true) {
 	    	  HttpSession session = request.getSession(true);
 				session.setAttribute("userName",userName);
+				//session.setAttribute("Id", dao.getPatientId(p)+" ");
 				//System.out.println(userName);
 				RequestDispatcher rd=request.getRequestDispatcher("./PatientDashbord.jsp");
 				rd.include(request, response);
 
 	      }
 	      else {
-	    	  out.println("<script type=\"text/javascript\">");
-	    	   out.println("alert('User or password incorrect');");
-	    	   out.println("location='logo.html';");
-	    	   out.println("</script>");
+	    	  RequestDispatcher rd=request.getRequestDispatcher("./fail.html");
+				rd.include(request, response);
 	      }
 	
 	}

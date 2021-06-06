@@ -30,15 +30,15 @@ public class LoginValidationDoctor extends HttpServlet {
 	    	  HttpSession session = request.getSession(true);
 				session.setAttribute("userName",userName);
 				
-				RequestDispatcher rd=request.getRequestDispatcher("./index.html");
+				
+				
+				RequestDispatcher rd=request.getRequestDispatcher("./Doctordashbord.jsp");
 				rd.include(request, response);
 
 	      }
 	      else {
-	    	  out.println("<script type=\"text/javascript\">");
-	    	   out.println("alert('User or password incorrect');");
-	    	   out.println("location='loginDr -.html';");
-	    	   out.println("</script>");
+	    	  RequestDispatcher rd=request.getRequestDispatcher("./fail.html");
+				rd.include(request, response);
 	      }
 	
 	}

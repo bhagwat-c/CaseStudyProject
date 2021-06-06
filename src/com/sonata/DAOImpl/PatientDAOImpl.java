@@ -113,33 +113,20 @@ public class PatientDAOImpl implements PatientDAO {
 
 	}
 	
-	public boolean patientAppointment(String una,String cs,String hh,String ch) {
+	public int patientAppointment(String pid,String hh,String ch) {
         try {
-            PreparedStatement ps3=con.prepareStatement("SELECT p_username FROM patient where p_username=?");
-           
-            ps3.setString(1,una);
-            ResultSet rs=ps3.executeQuery();
-            //System.out.println(rs.getString(1));
-            while(rs.next()) {
-                //System.out.println(rs.getString(1));
-                if(una.equals(rs.getString(1))) {
-                    PreparedStatement ps4=con.prepareStatement("update patient set P_CONSULTATION_SCHEDULED=?,P_HEALTH_HISTORY=?,P_CONSULTATION_HISTORY=? where P_NAME=?");
-                    ps3.setString(1,cs);
-                    ps3.setString(2,hh);
-                    ps3.setString(3,ch);
-                    ps3.setString(4,una);
-                    ResultSet rs1=ps3.executeQuery();
-                        return true;
-                   
-                }
-                else
-                    return false;
-               
+      
+                    PreparedStatement ps=con.prepareStatement("update patient set P_HEALTH_HISTORY=?,P_CONSULTATION_HISTORY=? where PATIENT_ID=?");
+                    ps.setString(1,hh);
+                    ps.setString(2,ch);
+                    ps.setString(3,pid);
+//                    ps3.setString(4,);
+                    row=ps.executeUpdate();
+                        //return true;
+            }catch(SQLException ed) {
+                ed.printStackTrace();
             }
-        }catch(SQLException ed) {
-            ed.printStackTrace();
-        }
-        return false;
+		return row;
     }
 	
 	public boolean validateLoginDUP(String ud,String pd) {
@@ -166,6 +153,46 @@ public class PatientDAOImpl implements PatientDAO {
 			ed.printStackTrace();
 		}
 		return false;
+	}
+	public int observation(int pid,int did,String obs,String med) {
+		try {
+		PreparedStatement ps=con.prepareStatement("INSERT INTO observation(patient_id,doc_id,prescription,meds_prescribed) VALUES(?,?,?,?)");
+		ps.setInt(1,pid);
+		ps.setInt(2, did);
+		ps.setString(3, obs);
+		ps.setString(4, med);
+		row=ps.executeUpdate();
+		PreparedStatement ps1=con.prepareStatement("DELETE FROM schedules where patient_id=? and doc_id=?" );
+		ps1.setInt(1,pid);
+		ps1.setInt(2,did);
+		ps1.executeUpdate();
+		
+		}catch(SQLException e) {
+		e.printStackTrace();
+		}
+		return row;
+		}
+	
+
+
+	@Override
+	public int bookAppointment(int pid, int drid, String date, String healthhist, String consulthist) {
+		try {
+			PreparedStatement ps=con.prepareStatement("UPDATE patient SET p_consultation_scheduled=?, p_consultation_history=?, p_health_history=? WHERE patient_id=?");
+			ps.setString(1, date);
+			ps.setString(2, consulthist);
+			ps.setString(3, healthhist);
+			ps.setInt(4, pid);
+			ps.executeUpdate();
+			PreparedStatement ps1=con.prepareStatement("INSERT INTO schedules(doc_schedule,doc_id,patient_id) VALUES(?,?,?)");
+			ps1.setString(1,date);
+			ps1.setInt(2, drid);
+			ps1.setInt(3, pid);
+			row=ps1.executeUpdate();
+			}catch(SQLException e) {
+			e.printStackTrace();
+			}
+			return row;
 	}
 }
 
